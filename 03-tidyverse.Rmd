@@ -447,8 +447,9 @@ surveys_recent
 >
 >```{r, answer=TRUE, eval=FALSE}
 >survey_recent <- surveys_complete %>%
-                  select(species_id, weight, hindfoot_length, year, sex) %>%
-                  filter(year >= 1995)
+                    select(species_id, weight, hindfoot_length, year, sex) %>%
+                    filter(year >= 1995)
+>
 >ggplot(mapping=aes(x=weight, y=hindfoot_length)) +
 >  geom_point(data=surveys_complete) +
 >  geom_point(data=survey_recent, aes(color="red")) +
