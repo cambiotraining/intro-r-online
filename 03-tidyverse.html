@@ -4630,12 +4630,10 @@ Answer
 <a class="sourceLine" id="cb38-4" title="4"></a>
 <a class="sourceLine" id="cb38-5" title="5"><span class="kw">ggplot</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">x=</span>weight, <span class="dt">y=</span>hindfoot_length)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb38-6" title="6"><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">data=</span>surveys_complete) <span class="op">+</span></a>
-<a class="sourceLine" id="cb38-7" title="7"><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">data=</span>survey_recent, <span class="kw">aes</span>(<span class="dt">color=</span><span class="st">&quot;red&quot;</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb38-8" title="8"><span class="st"> </span><span class="co">#remove lengend</span></a>
-<a class="sourceLine" id="cb38-9" title="9"><span class="st"> </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) </a></code></pre></div>
+<a class="sourceLine" id="cb38-7" title="7"><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">data=</span>survey_recent, <span class="dt">color=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
 </div>
 </div>
-<p><strong>Note:</strong> In the example above we did not specify the <code>data</code> argument in the <code>ggplot</code> function because the arguments in the <code>ggplot</code> function should be common throughout the whole plot. In this case we specified the respective data as separate layers in 2 different <code>geom_point</code> plots; the first plot is the data with all the animals in <code>surveys_complete</code> (points in black), the second plot is layered on top of the first plot which is a subset of the <code>surveys_complete</code> dataset (points in red).</p>
+<p><strong>Note:</strong> In the example above we did not specify the <code>data</code> argument in the <code>ggplot</code> function because the arguments in the <code>ggplot</code> function should be common throughout the whole plot. In this case we specified the respective data as separate layers in 2 different <code>geom_point</code> plots; the first plot is the data with all the animals in <code>surveys_complete</code> (points in black), the second plot is layered on top of the first plot which is a subset of the <code>surveys_complete</code> dataset <code>surveys_recent</code> (points in red).</p>
 </blockquote>
 <p><br /></p>
 </div>
