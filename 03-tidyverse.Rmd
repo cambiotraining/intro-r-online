@@ -3,7 +3,7 @@ title: Data manipulation and visualisation with tidyverse
 author: Alexia Cardona
 ---
 
-```{r, echo=FALSE, purl=FALSE, message = FALSE}
+```{r, echo=FALSE, purl=FALSE, message = FALSE, warning=FALSE}
 source("setup.R")
 surveys <- read.csv("data/portal_data_joined.csv")
 suppressWarnings(surveys$date <- lubridate::ymd(paste(surveys$year,
@@ -447,15 +447,14 @@ surveys_recent
 >
 >```{r, answer=TRUE, eval=FALSE}
 >survey_recent <- surveys_complete %>%
-                  select(species_id, weight, hindfoot_length, year, sex) %>%
-                  filter(year >= 1995)
+                    select(species_id, weight, hindfoot_length, year, sex) %>%
+                    filter(year >= 1995)
+>
 >ggplot(mapping=aes(x=weight, y=hindfoot_length)) +
 >  geom_point(data=surveys_complete) +
->  geom_point(data=survey_recent, aes(color="red")) +
->  #remove lengend
->  theme(legend.position = "none") 
+>  geom_point(data=survey_recent, color="red")
 >```
->**Note:** In the example above we did not specify the `data` argument in the `ggplot` function because the arguments in the `ggplot` function should be common throughout the whole plot.  In this case we specified the respective data as separate layers in 2 different `geom_point` plots; the first plot is the data with all the animals in `surveys_complete` (points in black), the second plot is layered on top of the first plot which is a subset of the `surveys_complete` dataset (points in red).
+>**Note:** In the example above we did not specify the `data` argument in the `ggplot` function because the arguments in the `ggplot` function should be common throughout the whole plot.  In this case we specified the respective data as separate layers in 2 different `geom_point` plots; the first plot is the data with all the animals in `surveys_complete` (points in black), the second plot is layered on top of the first plot which is a subset of the `surveys_complete` dataset `surveys_recent` (points in red).
 
 <br/>
 
